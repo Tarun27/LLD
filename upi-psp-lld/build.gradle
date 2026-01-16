@@ -1,0 +1,35 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.tarun'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // add Lombok for compile-time only plus annotation processing
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.26'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.26'
+
+    // Jackson for JSON (annotations + databind)
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+
+    // SLF4J API for logging
+    implementation 'org.slf4j:slf4j-api:2.0.13'
+    // Simple logger implementation for SLF4J (for dev/test; replace with logback-classic or another impl for production)
+    runtimeOnly 'org.slf4j:slf4j-simple:2.0.13'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+test {
+    useJUnitPlatform()
+}
