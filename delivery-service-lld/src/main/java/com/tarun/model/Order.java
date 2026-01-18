@@ -13,6 +13,9 @@ public class Order {
     private LocalDateTime pickedUpAt;
     private LocalDateTime deliveredAt;
 
+    /**
+     * Creates a new order in PENDING status
+     */
     public Order(String id, String customerId, String itemId) {
         this.id = id;
         this.customerId = customerId;

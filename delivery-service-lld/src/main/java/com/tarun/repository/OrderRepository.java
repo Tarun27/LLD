@@ -22,15 +22,31 @@ public class OrderRepository {
         return orders.containsKey(id);
     }
 
+    /**
+     * Returns a list of all orders in PENDING status
+     */
     public List<Order> findPendingOrders() {
         return orders.values().stream()
                 .filter(o -> o.getStatus() == OrderStatus.PENDING)
                 .collect(Collectors.toList());
     }
 
+    /**
+     * Returns a list of all orders in ASSIGNED status
+     */
     public List<Order> findAssignedOrders() {
         return orders.values().stream()
                 .filter(o -> o.getStatus() == OrderStatus.ASSIGNED)
                 .collect(Collectors.toList());
     }
+
+    /**
+     * Returns a list of all orders in CANCELLED status
+     */
+    public List<Order> findCancelledOrders() {
+        return orders.values().stream()
+                .filter(o -> o.getStatus() == OrderStatus.CANCELLED)
+                .collect(Collectors.toList());
+    }
+
 }

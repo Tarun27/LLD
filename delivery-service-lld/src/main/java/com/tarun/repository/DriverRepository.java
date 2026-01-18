@@ -7,7 +7,23 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 public class DriverRepository {
+    private static DriverRepository instance;
     private final Map<String, Driver> drivers = new ConcurrentHashMap<>();
+
+    /**
+     * Private constructor for singleton pattern
+     */
+    private DriverRepository() {}
+
+    /**
+     * Returns the singleton instance of DriverRepository
+     */
+    public static synchronized DriverRepository getInstance() {
+        if (instance == null) {
+            instance = new DriverRepository();
+        }
+        return instance;
+    }
 
     public void save(Driver driver) {
         drivers.put(driver.getId(), driver);

@@ -1,5 +1,8 @@
 package com.tarun.model;
 
+/**
+ * Creates a new driver who is initially available for deliveries
+ */
 public class Driver {
     private final String id;
     private final String name;

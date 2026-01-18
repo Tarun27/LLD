@@ -1,5 +1,8 @@
 package com.tarun.model;
 
+/**
+ * Creates a new customer with the given ID and name
+ */
 public class Customer {
     private final String id;
     private final String name;

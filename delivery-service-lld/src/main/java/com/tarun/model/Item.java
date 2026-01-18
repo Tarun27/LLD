@@ -1,5 +1,8 @@
 package com.tarun.model;
 
+/**
+ * Creates a new item with the given details
+ */
 public class Item {
     private final String id;
     private final String name;

@@ -9,6 +9,9 @@ import java.util.Comparator;
 
 public class OrderCountRankingStrategy implements DriverRankingStrategy {
 
+    /**
+     * Ranks drivers by number of completed orders in descending order
+     */
     @Override
     public List<Driver> rankDrivers(List<Driver> drivers) {
         return drivers.stream()
